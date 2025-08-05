@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'header.html' %}
+    <body>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('../static/assets/img/car.jpg">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Mathew Steeve's Blog</h1>
+                            <span class="subheading">A collection of steeve's random blogs.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        {% for i in r %}
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="{{url_for('post', num=i.id)}}">
+                            <h2 class="post-title">{{i.title}}</h2>
+                            <h3 class="post-subtitle">{{i.subtitle}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Mathew Steeve</a>
+                            on {{m}} {{d}}, {{yr}}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <!-- Pager-->
+            </div>
+        </div>
+        {% endfor %}
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older post→</a></div>
+                </div>
+        {% include "footer.html" %}
+    </body>
+</html>
